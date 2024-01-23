@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.cloudstorage.dto.LoginDTO;
 import ru.netology.cloudstorage.handl_except.InvalidCredentialsException;
-import ru.netology.cloudstorage.security.JWTUtil;
+import ru.netology.cloudstorage.security.JWTUtils;
+
 
 import java.util.Collections;
 import java.util.Map;
@@ -18,22 +19,21 @@ public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;
 
-    private final JWTUtil jwtUtil;
+    private final JWTUtils jwtUtils;
 
-    public AuthenticationController(JWTUtil jwtUtil, AuthenticationManager authenticationManager) {
-        this.jwtUtil = jwtUtil;
+    public AuthenticationController(JWTUtils jwtUtils, AuthenticationManager authenticationManager) {
+        this.jwtUtils = jwtUtils;
         this.authenticationManager = authenticationManager;
     }
 
     @PostMapping("/login")
     public Map<String, Object> loginAuthHandler(@RequestBody LoginDTO bodyLogin) {
         try {
-
             UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                     new UsernamePasswordAuthenticationToken(bodyLogin.getLogin(), bodyLogin.getPassword());
             authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-            String authToken = jwtUtil.generateToken(bodyLogin.getLogin());
+            String authToken = jwtUtils.generateToken(bodyLogin.getLogin());
 
             return Collections.singletonMap("auth-token", authToken);
         } catch (AuthenticationException autExcept) {
