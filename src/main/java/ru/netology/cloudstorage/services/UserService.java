@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.netology.cloudstorage.exceptions.UnauthorizedUserException;
+import ru.netology.cloudstorage.exceptions.UnauthorizedExceptionError;
 import ru.netology.cloudstorage.models.User;
 import ru.netology.cloudstorage.repositories.UserRepository;
 
@@ -49,7 +49,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         User user = userRepository.findUserByLogin(login);
         if (user == null) {
-            throw new UnauthorizedUserException();
+            throw new UnauthorizedExceptionError();
         }
         return user;
     }
