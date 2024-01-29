@@ -62,11 +62,20 @@ public class FileStorageController {
         this.fileService = fileService;
     }
 
+
     @PostMapping("/file")
     public ResponseEntity<?> uploadFile(@RequestHeader("auth-token") String authToken,
-                                        @RequestParam("filename") String filename, MultipartFile file) {
+                                        @RequestParam("filename") String filename,
+                                        MultipartFile file) {
         fileService.uploadFile(authToken, filename, file);
         return new ResponseEntity<>("Success upload", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/file")
+    public ResponseEntity<?> deleteFile(@RequestHeader("auth-token") String authToken,
+                                        @RequestParam("filename") String filename) {
+        fileService.deleteFile(authToken, filename);
+        return new ResponseEntity<>("Success delete", HttpStatus.OK);
     }
 
     @GetMapping("/file")
@@ -74,13 +83,6 @@ public class FileStorageController {
                                           @RequestParam("filename") String filename) {
         byte[] file = fileService.downloadFile(authToken, filename);
         return new ResponseEntity<>(file, HttpStatus.OK);
-    }
-
-    @GetMapping("/file")
-    public ResponseEntity<?> getAllFiles(@RequestHeader("auth-token") String authToken,
-                                         @RequestParam("limit") Integer limit) {
-        List<ResponseFile> responseFileList = fileService.getAllFiles(authToken, limit);
-        return new ResponseEntity<>(responseFileList, HttpStatus.OK);
     }
 
     @PutMapping("/file")
@@ -91,10 +93,10 @@ public class FileStorageController {
         return new ResponseEntity<>("Edit file name", HttpStatus.OK);
     }
 
-    @DeleteMapping("/file")
-    public ResponseEntity<?> deleteFile(@RequestHeader("auth-token") String authToken,
-                                        @RequestParam("filename") String filename) {
-        fileService.deleteFile(authToken, filename);
-        return new ResponseEntity<>("Success delete", HttpStatus.OK);
+    @GetMapping("/list")
+    public ResponseEntity<?> getAllFiles(@RequestHeader("auth-token") String authToken,
+                                         @RequestParam("limit") Integer limit) {
+        List<ResponseFile> rp = fileService.getAllFiles(authToken, limit);
+        return new ResponseEntity<>(rp, HttpStatus.OK);
     }
 }

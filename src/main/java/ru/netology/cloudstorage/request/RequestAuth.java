@@ -1,9 +1,8 @@
 package ru.netology.cloudstorage.request;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import javax.validation.constraints.NotBlank;
 
 /**
  * Данный класс представляет модель запроса аутентификации. Он содержит два поля: "login" и "password".

@@ -18,7 +18,7 @@ import java.io.IOException;
 
 /**
  * Класс JWTFilter является фильтром, который применяется для каждого запроса и выполняет следующие действия:
- *
+ * <p>
  * 1. Получает заголовок запроса с именем "auth-token" (request.getHeader("auth-token")).
  * 2. Проверяет, начинается ли значение заголовка с "Bearer " (requestTokenHeader.startsWith("Bearer ")).
  * 3. Если значение заголовка начинается с "Bearer ", то извлекает JWT токен из заголовка, удаляя префикс "Bearer
@@ -34,7 +34,7 @@ import java.io.IOException;
  * аутентификацию пользователя, и устанавливает его в контекст безопасности
  * (SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken)).
  * 9. Продолжает выполнение цепочки фильтров (filterChain.doFilter(request, response)).
- *
+ * <p>
  * Таким образом, класс JWTFilter выполняет проверку и аутентификацию JWT токена для каждого запроса,
  * и если токен действителен, устанавливает аутентификацию пользователя в контекст безопасности.
  */
@@ -52,8 +52,7 @@ public class JWTFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-            throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         final String requestTokenHeader = request.getHeader("auth-token");
         String username = null;
         String jwtToken = null;
@@ -74,8 +73,7 @@ public class JWTFilter extends OncePerRequestFilter {
             UserDetails userDetails = userService.loadUserByUsername(username);
 
             if (jwtUtils.isValidateToken(jwtToken, userDetails)) {
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                        = new UsernamePasswordAuthenticationToken(
+                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails,
                         null,
                         userDetails.getAuthorities()
@@ -87,6 +85,7 @@ public class JWTFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+
 
 
 

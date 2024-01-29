@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.cloudstorage.request.RequestAuth;
+
+import jakarta.validation.Valid;
 import ru.netology.cloudstorage.response.JwtTokenResponse;
 import ru.netology.cloudstorage.services.AuthenticationService;
-
-import javax.validation.Valid;
 
 /**
  * Этот класс является контроллером, который обрабатывает HTTP-запросы для аутентификации и авторизации пользователей.
@@ -47,8 +47,8 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
     @Autowired
-    public AuthenticationController(AuthenticationService authService) {
-        this.authenticationService = authService;
+    public AuthenticationController(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
     }
 
     @PostMapping("/login")
@@ -57,9 +57,11 @@ public class AuthenticationController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
+
     @PostMapping("/logout")
     public ResponseEntity<?> logout(@RequestHeader("auth-token") String authToken) {
         authenticationService.logout(authToken);
         return new ResponseEntity<>("Success logout", HttpStatus.OK);
     }
+
 }

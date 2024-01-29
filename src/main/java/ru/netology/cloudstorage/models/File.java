@@ -1,11 +1,12 @@
 package ru.netology.cloudstorage.models;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 /**
@@ -46,14 +47,14 @@ public class File {
     private Long id;
 
     @Column(name = "filename", unique = true)
-    @NotNull
+    @jakarta.validation.constraints.NotNull
     private String filename;
 
     @Column(name = "edited_at")
     private LocalDateTime editedAt;
 
     @Column(name = "size")
-    @NotNull
+    @jakarta.validation.constraints.NotNull
     private Long size;
 
     @Column(name = "file_content")

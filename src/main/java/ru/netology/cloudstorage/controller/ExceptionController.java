@@ -2,8 +2,8 @@ package ru.netology.cloudstorage.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.netology.cloudstorage.exceptions.*;
 import ru.netology.cloudstorage.response.ResponseError;
 
@@ -27,7 +27,7 @@ import ru.netology.cloudstorage.response.ResponseError;
  * Таким образом, данный класс позволяет обрабатывать исключения и возвращать соответствующие ответы с ошибками,
  * что улучшает обработку ошибок в приложении.
  */
-@Controller
+@RestControllerAdvice
 public class ExceptionController {
 
     @ExceptionHandler(BadCredentialsExceptionError.class)

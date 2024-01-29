@@ -9,3 +9,4 @@ public class ResponseError {
     private String message;
     private int id;
 }
+

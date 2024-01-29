@@ -1,6 +1,6 @@
 package ru.netology.cloudstorage.services;
 
-import io.micrometer.common.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,9 +62,6 @@ import java.util.List;
 public class FileService {
 
     private final AuthRepository authRepository;
-
-
-    // хранилище файлов
     private final FileRepository fileRepository;
 
     @Autowired
@@ -73,14 +70,14 @@ public class FileService {
         this.fileRepository = fileRepository;
     }
 
-    public boolean uploadFile(String authToken, String filename, MultipartFile multiFile) {
+    public boolean uploadFile(String authToken, String filename, MultipartFile multipartFile) {
         User user = getUserByToken(authToken);
         if (user == null) {
             throw new UnauthorizedExceptionError();
         }
         try {
-            File fileUpload = new File(filename, LocalDateTime.now(), multiFile.getSize(), multiFile.getBytes(), user);
-            fileRepository.save(fileUpload);
+            File uploadFile = new File(filename, LocalDateTime.now(), multipartFile.getSize(), multipartFile.getBytes(), user);
+            fileRepository.save(uploadFile);
         } catch (IOException e) {
             throw new InputDataExceptionError();
         }
@@ -95,8 +92,8 @@ public class FileService {
         if (StringUtils.isEmpty(filename)) {
             throw new InputDataExceptionError();
         }
-        long countDeleted = fileRepository.deleteByUserAndFilename(user, filename);
-        if (countDeleted == 0) {
+        long deletedCount = fileRepository.deleteByUserAndFilename(user, filename);
+        if (deletedCount == 0) {
             throw new DeleteFileExceptionError();
         }
     }
@@ -110,7 +107,6 @@ public class FileService {
         if (file == null) {
             throw new InputDataExceptionError();
         }
-
         byte[] fileContent = file.getFileContent();
         if (fileContent == null) {
             throw new UploadFileExceptionError();
@@ -118,7 +114,6 @@ public class FileService {
         return fileContent;
     }
 
-    // изменить имя файла
     public void editFileName(String authToken, String filename, RequestEditFileName requestEditFileName) {
         User user = getUserByToken(authToken);
         if (user == null) {
@@ -146,7 +141,7 @@ public class FileService {
         if (allFilesByUser == null) {
             throw new GettingFileListExceptionError();
         }
-        return allFilesByUser.stream().map(f -> new ResponseFile(f.getFilename(), f.getSize())).toList();
+        return allFilesByUser.stream().map(x -> new ResponseFile(x.getFilename(), x.getSize())).toList();
     }
 
     public User getUserByToken(String authToken) {
