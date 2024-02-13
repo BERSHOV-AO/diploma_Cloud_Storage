@@ -13,14 +13,14 @@ public class DiplomaCloudStorageApplication {
         SpringApplication.run(DiplomaCloudStorageApplication.class, args);
     }
 
-//    @Bean
-//    public CommandLineRunner commandLineRunner(PasswordEncoder encoder) {
-//        return args -> {
-//            String password = "aleksey2";
-//            String encryptedPassword = encoder.encode(password);
-//            System.out.println("Encrypted password: " + encryptedPassword);
-//
-//        };
-//    }
+    @Bean
+    public CommandLineRunner commandLineRunner(PasswordEncoder encoder) {
+        return args -> {
+            String password = "bershov2";
+            String encryptedPassword = encoder.encode(password);
+            System.out.println("Encrypted password: " + encryptedPassword);
+
+        };
+    }
 
 }

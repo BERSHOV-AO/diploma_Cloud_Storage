@@ -1,5 +1,5 @@
 insert into users (login, password)
-VALUES ('aleksey1@mail.ru', '$2a$10$mP59rt6EActsTTUIe7Q03uGYxWYbTI1ofKq6NZ/feEQDEUSPClRmS'); -- pass: aleksey1
+VALUES ('bershovAl1@mail.ru', '$2a$10$VbnmuUtU1qKfCbW9ctEpq.IYsmhzYVhZJiRx1yIjvq9pJXpLqTQjC'); -- pass: bershov1
 
 insert into users (login, password)
-VALUES ('aleksey2@mail.ru', '$2a$10$Inhwmi/aG14t1mDaEDJNJuUQgHmNDjxjeePljY02gnOgcI3OUTNKG'); -- pass: aleksey2
+VALUES ('bershovAl2@mail.ru', '$2a$10$CFJaOEzV55NLweS9Ca8rF.vi2/B3UD8lDOCe1oLKbwszLUB7.w0KW'); -- pass: bershov2
