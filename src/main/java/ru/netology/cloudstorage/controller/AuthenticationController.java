@@ -57,7 +57,6 @@ public class AuthenticationController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-
     @PostMapping("/logout")
     public ResponseEntity<?> logout(@RequestHeader("auth-token") String authToken) {
         authenticationService.logout(authToken);

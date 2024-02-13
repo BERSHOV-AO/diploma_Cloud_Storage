@@ -70,12 +70,18 @@ public class AuthenticationService {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestAuth.getLogin(),
                     requestAuth.getPassword()));
+
+            System.out.println("getLogin: " + requestAuth.getLogin());
+            System.out.println("getPassword: " + requestAuth.getPassword());
         } catch (BadCredentialsExceptionError e) {
             throw new BadCredentialsExceptionError();
         }
         User user = userRepository.findUserByLogin(requestAuth.getLogin());
         String token = jwtUtils.generateToken(user);
+        System.out.println("token: " + token);
         authRepository.saveAuthenticationUser(token, user);
+
+        System.out.println("getUserPassword " + user.getUserPassword());
         return new JwtTokenResponse(token);
     }
 

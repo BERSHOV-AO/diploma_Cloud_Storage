@@ -25,7 +25,6 @@ import ru.netology.cloudstorage.services.UserService;
 
 import java.util.List;
 
-
 /**
  * Аннотация @Configuration указывает, что данный класс является конфигурационным классом для Spring. Он определяет
  * настройки и конфигурации для приложения.
@@ -39,7 +38,7 @@ import java.util.List;
  * безопасности и авторизации для приложения.
  * <p>
  * В методе filterChain определяются основные настройки безопасности. Здесь отключается CSRF защита,
- * включается поддержка CORS (Cross-Origin Resource Sharing) для обработки запросов из разных источников,
+ * включается поддержка CORS (C+Origin Resource Sharing) для обработки запросов из разных источников,
  * устанавливается политика управления сессиями (без сохранения состояния) и задаются правила авторизации
  * для различных HTTP-запросов.
  * <p>
@@ -125,7 +124,6 @@ public class CloudStorageConfiguration {
 
         authProvider.setUserDetailsService(userService);
         authProvider.setPasswordEncoder(passwordEncoder());
-
         return authProvider;
     }
 
