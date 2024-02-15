@@ -56,16 +56,9 @@ login: aleksey2@mail.ru, password: aleksey2
 
 1. Установите nodejs (версия не ниже 19.7.0) на компьютер, следуя инструкции https://nodejs.org/ru/download/current.
 2. Скачайте FRONT https://github.com/netology-code/jd-homeworks/tree/master/diploma/netology-diplom-frontend (JavaScript).
-3. Перейдите в папку FRONT приложения и все команды для запуска выполняйте из неё.
-4. Следуя описанию README.md FRONT проекта, запустите nodejs-приложение (npm install, npm run serve).
-5. Далее нужно задать url для вызова своего backend-сервиса.
-    - В файле .env FRONT (находится в корне проекта) приложения нужно изменить url до backend, например: VUE_APP_BASE_URL=http://localhost:8080.
-        1. Нужно указать корневой url вашего backend, к нему frontend будет добавлять все пути согласно спецификации
-        2. Для VUE_APP_BASE_URL=http://localhost:8080 при выполнении логина frontend вызовет http://localhost:8080/login
-    - Запустите FRONT снова: npm run serve.
-    - Изменённый url сохранится для следующих запусков.
-6. По умолчанию FRONT запускается на порту 8080 и доступен по url в браузере http://localhost:8080.
-    - Если порт 8080 занят, FRONT займёт следующий доступный (8081). После выполнения npm run serve в терминале вы увидите, на каком порту он запустился.
+3. Перейти в папку FRONT приложения и все команды для запуска выполнять из нее;
+4. Следуя описанию README.md FRONT проекта запустить nodejs приложение (npm install...);
+5. Для запуска FRONT приложения с расширенным логированием использовать команду: `npm run serve`.
 
 ## Авторизация приложения
 
