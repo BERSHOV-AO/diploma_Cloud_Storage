@@ -74,9 +74,8 @@ Backend проект запустится на порту **5500**
 ### Стартовые пользователи:
 
 ```
-login: aleksey1@mail.ru, password: aleksey1
-login: aleksey2@mail.ru, password: aleksey2
-
+USERNAME: bershovAl1@mail.ru, PASSWORD: bershov1
+USERNAME: bershovAl2@mail.ru, PASSWORD: bershov2
 ```
 
 ### Работа приложения:
