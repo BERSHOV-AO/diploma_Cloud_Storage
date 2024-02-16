@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.netology.cloudstorage.exceptions.*;
 import ru.netology.cloudstorage.response.ResponseError;
 
-
 /**
  * Данный класс является контроллером, который обрабатывает исключения, возникающие в приложении, и возвращает
  * соответствующие ответы с ошибками.

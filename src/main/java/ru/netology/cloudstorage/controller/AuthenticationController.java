@@ -62,5 +62,4 @@ public class AuthenticationController {
         authenticationService.logout(authToken);
         return new ResponseEntity<>("Success logout", HttpStatus.OK);
     }
-
 }
