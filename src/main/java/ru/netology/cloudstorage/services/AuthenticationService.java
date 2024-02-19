@@ -1,5 +1,7 @@
 package ru.netology.cloudstorage.services;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,7 +15,6 @@ import ru.netology.cloudstorage.request.RequestAuth;
 
 import ru.netology.cloudstorage.response.JwtTokenResponse;
 import ru.netology.cloudstorage.security.JWTUtils;
-
 
 /**
  * Данный класс AuthService отвечает за логику аутентификации и авторизации пользователей.
@@ -49,8 +50,10 @@ import ru.netology.cloudstorage.security.JWTUtils;
  * то после вызова "authToken.substring(7)" будет получено значение "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...".
  * Таким образом, префикс "Bearer " будет удален из токена.
  */
+
 @Service
 public class AuthenticationService {
+    final static Logger logger = Logger.getLogger(AuthenticationService.class);
 
     private final UserRepository userRepository;
     private final AuthRepository authRepository;
@@ -70,23 +73,21 @@ public class AuthenticationService {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestAuth.getLogin(),
                     requestAuth.getPassword()));
-
-            System.out.println("getLogin: " + requestAuth.getLogin());
-            System.out.println("getPassword: " + requestAuth.getPassword());
         } catch (BadCredentialsExceptionError e) {
             throw new BadCredentialsExceptionError();
         }
         User user = userRepository.findUserByLogin(requestAuth.getLogin());
         String token = jwtUtils.generateToken(user);
-        System.out.println("token: " + token);
         authRepository.saveAuthenticationUser(token, user);
 
-        System.out.println("getUserPassword " + user.getUserPassword());
+        logger.info(String.format("Login  user name: %s ", user.getUsername()));
         return new JwtTokenResponse(token);
     }
 
     public void logout(String authToken) {
         String jwt = authToken.substring(7);
+        User user = authRepository.getAuthenticationUserByToken(authToken);
+        logger.info(String.format("User  logout: %s ", user.getUsername()));
         authRepository.deleteAuthenticationUserByToken(jwt);
     }
 }

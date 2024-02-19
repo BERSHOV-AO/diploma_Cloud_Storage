@@ -1,6 +1,8 @@
 package ru.netology.cloudstorage.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,6 +62,7 @@ import java.util.List;
 @Service
 @Transactional
 public class FileService {
+    final static Logger logger = Logger.getLogger(FileService.class);
 
     private final AuthRepository authRepository;
     private final FileRepository fileRepository;
@@ -78,8 +81,11 @@ public class FileService {
         try {
             File uploadFile = new File(filename, LocalDateTime.now(), multipartFile.getSize(), multipartFile.getBytes(), user);
             fileRepository.save(uploadFile);
+            logger.info(String.format("uploadFile: %s ", uploadFile.getFilename()));
         } catch (IOException e) {
+            logger.warn("uploadFile warn: ", e);
             throw new InputDataExceptionError();
+
         }
         return true;
     }
@@ -96,6 +102,7 @@ public class FileService {
         if (deletedCount == 0) {
             throw new DeleteFileExceptionError();
         }
+        logger.info(String.format("Deleted file: %s ", filename));
     }
 
     public byte[] downloadFile(String authToken, String filename) {
@@ -111,6 +118,7 @@ public class FileService {
         if (fileContent == null) {
             throw new UploadFileExceptionError();
         }
+        logger.info(String.format("Download file: %s ", filename));
         return fileContent;
     }
 
@@ -127,6 +135,7 @@ public class FileService {
         if (filename.equals(requestEditFileName.getFilename())) {
             throw new UploadFileExceptionError();
         }
+        logger.info(String.format("Edit file name: %s ", filename));
     }
 
     public List<ResponseFile> getAllFiles(String authToken, Integer limit) {

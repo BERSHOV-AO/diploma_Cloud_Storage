@@ -1,0 +1,4 @@
+2024-02-19 13:25:47 INFO  AuthenticationService:83 - Login  user name: bershovAl1@mail.ru 
+2024-02-19 13:26:01 INFO  FileService:105 - Deleted file: 787.txt 
+2024-02-19 13:26:26 INFO  FileService:84 - uploadFile: postgres_SQL_v1.txt 
+2024-02-19 13:26:35 INFO  FileService:121 - Download file: git_push_and_run.jpg 
