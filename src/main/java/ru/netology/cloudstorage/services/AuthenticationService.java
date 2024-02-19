@@ -54,7 +54,6 @@ import ru.netology.cloudstorage.security.JWTUtils;
 @Service
 public class AuthenticationService {
     final static Logger logger = Logger.getLogger(AuthenticationService.class);
-
     private final UserRepository userRepository;
     private final AuthRepository authRepository;
     private final JWTUtils jwtUtils;
@@ -74,12 +73,12 @@ public class AuthenticationService {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestAuth.getLogin(),
                     requestAuth.getPassword()));
         } catch (BadCredentialsExceptionError e) {
+            logger.error("Bad credentials error");
             throw new BadCredentialsExceptionError();
         }
         User user = userRepository.findUserByLogin(requestAuth.getLogin());
         String token = jwtUtils.generateToken(user);
         authRepository.saveAuthenticationUser(token, user);
-
         logger.info(String.format("Login  user name: %s ", user.getUsername()));
         return new JwtTokenResponse(token);
     }
