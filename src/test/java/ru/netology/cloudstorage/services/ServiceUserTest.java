@@ -17,21 +17,15 @@ import ru.netology.cloudstorage.exceptions.UnauthorizedExceptionError;
 /**
  * Данный класс является юнит-тестом для класса UserService. В нем используется фреймворк Mockito для создания
  * мок-объектов и настройки их поведения.
- * <p>
  * Аннотация @ExtendWith(MockitoExtension.class) указывает на использование расширения Mockito при запуске тестов.
- * <p>
  * Аннотация @Mock создает мок-объект UserRepository, который будет использоваться в тестируемом классе UserService.
- * <p>
  * Аннотация @InjectMocks создает экземпляр UserService и автоматически внедряет созданный мок-объект
  * UserRepository в UserService.
- * <p>
  * Метод setUp() с аннотацией @BeforeEach устанавливает поведение мок-объекта UserRepository. Он говорит,
  * что при вызове метода findUserByLogin() с аргументом AUTH_USERNAME_3, должен быть возвращен объект USER_3.
- * <p>
  * Метод loadUserByNameNotAuthorizedException() тестирует ситуацию, когда пользователь не авторизован.
  * Он использует метод assertThrows() для проверки, что при вызове метода loadUserByUsername() с аргументом
  * AUTH_USERNAME_4 будет выброшено исключение UnauthorizedExceptionError.
- * <p>
  * Метод loadUserByName() тестирует ситуацию, когда пользователь авторизован. Он использует метод assertEquals()
  * для проверки, что при вызове метода loadUserByUsername() с аргументом AUTH_USERNAME_3 будет возвращен объект USER_3.
  */

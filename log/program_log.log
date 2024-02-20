@@ -3,3 +3,99 @@
 2024-02-19 14:14:47 INFO  FileService:127 - Download file: git_push_and_run.jpg 
 2024-02-19 14:16:04 INFO  FileService:108 - Deleted file: postgres_SQL_v1.txt 
 2024-02-19 14:16:34 INFO  FileService:84 - uploadFile: SQL_task2.txt
+2024-02-20 09:56:55 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 09:58:56 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 09:59:29 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 10:01:39 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 10:02:38 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 10:03:11 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 10:03:49 INFO  AuthenticationService:82 - Login  user name: Auth_Username5 
+2024-02-20 10:27:22 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:28:27 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:28:27 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:29:38 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:29:38 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:29:38 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:30:25 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:30:25 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:30:25 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:30:25 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:32:08 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:32:08 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:32:08 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:32:08 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:32:08 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:33:44 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:33:44 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:33:44 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:33:44 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:33:44 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:33:44 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:38:37 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:38:37 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:38:37 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:38:37 ERROR FileService:119 - File not found, incorrect input data! 
+2024-02-20 10:38:37 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:38:37 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:38:37 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:38:37 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:41:35 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:41:35 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:41:35 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:41:35 ERROR FileService:119 - File not found, incorrect input data! 
+2024-02-20 10:41:35 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:41:35 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:41:35 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:41:35 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:41:35 INFO  FileService:147 - Edit file name: Filename1 
+2024-02-20 10:49:37 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:49:37 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:49:37 ERROR FileService:134 - User is not found, no authorization!
+2024-02-20 10:49:37 ERROR FileService:139 - File not found, incorrect input data!
+2024-02-20 10:49:37 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:49:37 INFO  FileService:127 - Download file: Filename1 
+2024-02-20 10:49:37 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:49:37 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:49:37 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:49:37 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:49:37 INFO  FileService:147 - Edit file name: Filename1 
+2024-02-20 10:50:12 INFO  FileService:127 - Download file: Filename1 
+2024-02-20 10:51:20 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:51:20 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:51:20 ERROR FileService:134 - User is not found, no authorization!
+2024-02-20 10:51:20 ERROR FileService:139 - File not found, incorrect input data!
+2024-02-20 10:51:20 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:51:20 ERROR FileService:119 - File not found, incorrect input data! 
+2024-02-20 10:51:20 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:51:20 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:51:20 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:51:20 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:51:20 INFO  FileService:147 - Edit file name: Filename1 
+2024-02-20 10:54:41 ERROR FileService:157 - Invalid input data!
+2024-02-20 10:54:41 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:54:41 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:54:41 ERROR FileService:134 - User is not found, no authorization!
+2024-02-20 10:54:41 ERROR FileService:139 - File not found, incorrect input data!
+2024-02-20 10:54:41 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:54:41 ERROR FileService:162 - Error when retrieving a list of files!
+2024-02-20 10:54:41 WARN  FileService:153 - User is not found, no authorization!
+2024-02-20 10:54:41 ERROR FileService:119 - File not found, incorrect input data! 
+2024-02-20 10:54:41 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:54:41 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:54:41 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:54:41 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:54:41 INFO  FileService:147 - Edit file name: Filename1 
+2024-02-20 10:56:12 ERROR FileService:157 - Invalid input data!
+2024-02-20 10:56:12 ERROR FileService:78 - User is not found, no authorization!
+2024-02-20 10:56:12 ERROR FileService:100 - Invalid input data!
+2024-02-20 10:56:12 ERROR FileService:134 - User is not found, no authorization!
+2024-02-20 10:56:12 ERROR FileService:139 - File not found, incorrect input data!
+2024-02-20 10:56:12 INFO  FileService:84 - uploadFile: Filename1 
+2024-02-20 10:56:12 ERROR FileService:162 - Error when retrieving a list of files!
+2024-02-20 10:56:12 WARN  FileService:153 - User is not found, no authorization!
+2024-02-20 10:56:12 ERROR FileService:119 - File not found, incorrect input data! 
+2024-02-20 10:56:12 ERROR FileService:114 - User is not found, no authorization!
+2024-02-20 10:56:12 ERROR FileService:96 - User is not found, no authorization!
+2024-02-20 10:56:13 ERROR FileService:105 - Error when deleting a file!
+2024-02-20 10:56:13 INFO  FileService:108 - Deleted file: Filename1 
+2024-02-20 10:56:13 INFO  FileService:147 - Edit file name: Filename1 
