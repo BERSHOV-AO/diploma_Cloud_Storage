@@ -2,4 +2,4 @@
 2024-02-19 14:14:28 INFO  FileService:147 - Edit file name: type_JOIN.png 
 2024-02-19 14:14:47 INFO  FileService:127 - Download file: git_push_and_run.jpg 
 2024-02-19 14:16:04 INFO  FileService:108 - Deleted file: postgres_SQL_v1.txt 
-2024-02-19 14:16:34 INFO  FileService:84 - uploadFile: SQL_task2.txt 
+2024-02-19 14:16:34 INFO  FileService:84 - uploadFile: SQL_task2.txt
